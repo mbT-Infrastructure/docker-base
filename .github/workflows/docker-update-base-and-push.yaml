@@ -1,11 +1,8 @@
 name: "docker-build-and-push"
 
 on:
-  push:
-    branches:
-      - "main"
-      - "**"
-  workflow_dispatch:
+  schedule:
+    - cron: "30 23 * * *"
 
 jobs:
   docker-build-and-push:
@@ -18,4 +15,4 @@ jobs:
       - name: login into repository
         run: echo ${{ secrets.DOCKER_REGISTRY_PASSWORD }} | docker login --username ${{ secrets.DOCKER_REGISTRY_USERNAME }} --password-stdin
       - name: build and push
-        run: ./docker-build.sh --push
+        run: ./docker-build.sh --push --update-base
