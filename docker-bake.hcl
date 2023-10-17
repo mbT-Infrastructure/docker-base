@@ -19,4 +19,5 @@ target "default" {
         "arm64",
         "arm"
     ]
+    pull = true
 }
