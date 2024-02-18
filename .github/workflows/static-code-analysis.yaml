@@ -19,7 +19,8 @@ jobs:
                   cat | \
                       docker run --pull always --rm \
                           --volume "/media/saved-cache:/media/saved-cache" \
-                          --volume "docker-base-build-cache:/media/build-cache" \
+                          --volume "docker-base\
+                  -build-cache:\/media/build-cache" \
                           madebytimo/scripts \
                           bash \
                       << EOF
@@ -49,7 +50,8 @@ jobs:
               run: |
                   docker run --pull always --rm \
                       --volume "/media/saved-cache:/media/saved-cache" \
-                      --volume "docker-base-build-cache:/media/build-cache" \
+                      --volume "docker-base\
+                  -build-cache:/media/build-cache" \
                       madebytimo/scripts \
                       compress.sh --fast --output /media/saved-cache/build-cache /media/build-cache
                   sudo chown -R "$(whoami)" /media/saved-cache
