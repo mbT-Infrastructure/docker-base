@@ -3,7 +3,7 @@
 This image is used as base for other images created from me.
 
 It extends the Debian image by curl and install-autonomous.sh and replace-vars.sh from the [scripts
-repository].
+repository] and sets bash as default shell.
 
 The timezone is set to Europe/Berlin.
 
