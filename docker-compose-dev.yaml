@@ -3,3 +3,4 @@ services:
     base:
         container_name: base
         build: .
+        command: [ "bash", "-c", "ls -la /media/user && cat /etc/passwd"]

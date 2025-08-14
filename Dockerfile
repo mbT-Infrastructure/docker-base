@@ -10,6 +10,6 @@ RUN apt update -qq && apt install -y -qq curl && \
         https://gitlab.com/madebyTimo/scripts/-/raw/main/scripts/replace-vars.sh \
     && chmod +x /usr/local/bin/install-autonomous.sh /usr/local/bin/replace-vars.sh \
     \
-    && adduser user --disabled-password --gecos "" --home /media/user
+    && useradd --comment "" --create-home --home-dir /media/user --shell /bin/bash --uid 1000 user
 
 ENV TZ="Europe/Berlin"
