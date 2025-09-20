@@ -1,6 +1,9 @@
 FROM debian
 
 SHELL ["/usr/bin/env", "bash", "-c"]
+
+COPY files/block-packages-container /etc/apt/preferences.d/block-packages-container
+
 RUN apt update -qq && apt install -y -qq curl && \
     rm -rf /var/lib/apt/lists/* \
     \

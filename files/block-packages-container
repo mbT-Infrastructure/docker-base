@@ -1,0 +1,3 @@
+Package: apparmor
+Pin: release *
+Pin-Priority: -1
